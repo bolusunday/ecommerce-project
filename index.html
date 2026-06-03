@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E‑Commerce Store</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="logo">Bliss Store</div>
+
+      <input type="text" class="search" placeholder="Search products..." />
+
+      <div class="cart-icon">🛒 <span class="cart-count">0</span></div>
+    </nav>
+
+    <div class="hero">
+      <img src="/assets/images/hero.jpg" class="hero-image" />
+    </div>
+
+    <div class="container">
+      <!-- FILTERS SIDEBAR -->
+      <aside class="filters">
+        <h3></h3>
+
+        <div class="filter-group">
+          <label>Category</label>
+          <select class="filter-category">
+            <option value="all">All</option>
+            <option value="electronics">Electronics</option>
+            <option value="fashion">Fashion</option>
+            <option value="home">Home</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>Max Price</label>
+          <input
+            type="range"
+            class="filter-price"
+            min="0"
+            max="200"
+            value="200"
+          />
+          <span class="price-value">€200</span>
+        </div>
+
+        <div class="filter-group">
+          <label>Rating</label>
+          <select class="filter-rating">
+            <option value="0">All Ratings</option>
+            <option value="4">4★ & up</option>
+            <option value="3">3★ & up</option>
+          </select>
+        </div>
+      </aside>
+
+      <!-- PRODUCT GRID -->
+      <main class="product-grid">
+        <!-- JS will inject product cards here -->
+      </main>
+    </div>
+
+    <!-- CART SIDEBAR -->
+    <!-- <div class="cart-sidebar">
+      <h2>Your Cart</h2>
+      <div class="cart-items"></div>
+
+      <div class="cart-footer">
+        <p>Total: <span class="cart-total">€0.00</span></p>
+        <button class="go-checkout">Go to checkout</button>
+      </div>
+    </div> -->
+
+    <!-- PRODUCT MODAL -->
+    <div class="modal-overlay">
+      <div class="modal">
+        <span class="close-modal">&times;</span>
+
+        <button class="modal-fav-btn">
+          <i class="fa-regular fa-heart"></i>
+        </button>
+
+        <img class="modal-img" src="" alt="" />
+        <h2 class="modal-title"></h2>
+        <p class="modal-desc"></p>
+        <p class="modal-price"></p>
+        <button class="add-to-cart-modal">Add to Cart</button>
+      </div>
+    </div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

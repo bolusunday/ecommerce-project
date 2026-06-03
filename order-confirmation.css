@@ -1,0 +1,40 @@
+.confirm-container {
+  max-width: 600px;
+  margin: 80px auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.confirm-icon {
+  font-size: 70px;
+  color: #4caf50;
+  margin-bottom: 20px;
+}
+
+.confirm-msg {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.order-summary-box {
+  background: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.order-items div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.back-home-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}

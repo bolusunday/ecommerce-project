@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="checkout.css" />
+  </head>
+  <body>
+    <div class="checkout-container">
+      <h2>Checkout</h2>
+
+      <div class="checkout-grid">
+        <!-- LEFT: Shipping + Payment -->
+        <div class="checkout-left">
+          <section class="shipping-section">
+            <h3>Shipping Details</h3>
+            <div class="input-fields">
+              <input type="text" class="name" placeholder="Full Name" />
+              <input type="text" class="address" placeholder="Address" />
+              <input type="text" class="city" placeholder="City" />
+              <input type="text" class="zip" placeholder="ZIP Code" />
+            </div>
+          </section>
+        </div>
+
+        <!-- RIGHT: Order Summary -->
+        <section class="shipping-options">
+          <h3>Shipping Method</h3>
+
+          <label>
+            <input type="radio" name="shipping" value="standard" checked />
+            Standard Shipping (3–5 days) — €5
+          </label>
+
+          <label>
+            <input type="radio" name="shipping" value="express" />
+            Express Shipping (1–2 days) — €15
+          </label>
+
+          <label>
+            <input type="radio" name="shipping" value="overnight" />
+            Overnight Shipping — €25
+          </label>
+        </section>
+        <div class="checkout-right">
+          <h3 class="order-summary">Order Summary</h3>
+          <div class="order-items"></div>
+          <p class="order-total"></p>
+
+          <button class="place-order-btn">Place Order</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="order-success">Order placed successfully!</div> -->
+
+    <script type="module" defer src="./modules/checkoutController.js"></script>
+  </body>
+</html>

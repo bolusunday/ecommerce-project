@@ -1,0 +1,369 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  color: rgb(79, 78, 78);
+  /* color: #4b5563; Subtle dark gray */
+}
+
+body {
+  background: #f5f7fa;
+  color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background: white;
+  background: rgb(228, 223, 223);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgb(239, 95, 24);
+}
+
+.search {
+  width: 40%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.cart-icon {
+  font-size: 1.4rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.cart-count {
+  background: crimson;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  position: absolute;
+  top: -8px;
+  right: -10px;
+}
+
+.hero {
+  background: rgb(228, 223, 223);
+}
+.hero-image {
+  width: 100%;
+}
+
+/* LAYOUT */
+.container {
+  background: rgb(228, 223, 223);
+  display: flex;
+  /* margin-top: 50px; */
+  padding: 20px;
+  padding-top: 50px;
+  gap: 20px;
+}
+
+/* FILTERS */
+.filters {
+  width: 220px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  height: fit-content;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column; /* Stacks label on top of the select */
+  gap: 8px; /* Creates a clean gap between label and select */
+  font-family: sans-serif;
+  max-width: 240px;
+  margin-bottom: 20px;
+}
+
+.filter-group label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filter-category {
+  width: 100%;
+  padding: 10px 40px 10px 12px; /* Generous right padding for our custom arrow */
+  font-size: 16px;
+  color: #1f2937;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  box-sizing: border-box;
+  cursor: pointer;
+  /* CRUCIAL: Removes the ugly default browser arrow */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* Adds a clean, custom CSS arrow right inside the box */
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234b5563' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+
+  transition: all 0.2s ease;
+}
+
+.filter-rating {
+  width: 100%;
+  padding: 10px 40px 10px 12px; /* Generous right padding for our custom arrow */
+  font-size: 16px;
+  color: #1f2937;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  box-sizing: border-box;
+  cursor: pointer;
+  /* CRUCIAL: Removes the ugly default browser arrow */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* Adds a clean, custom CSS arrow right inside the box */
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234b5563' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+
+  transition: all 0.2s ease;
+}
+
+.filter-price {
+  -webkit-appearance: none; /* Removes default Chrome/Safari style */
+  appearance: none;
+  width: 100%;
+  height: 8px; /* We set the track height here for base fallback */
+  background: transparent; /* Keeps container background clean */
+  cursor: pointer;
+}
+
+/* Removes the blue focus ring in Chrome */
+.filter-price:focus {
+  outline: none;
+}
+
+.filter-price::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  background: #e5e7eb; /* Light gray background line */
+  border-radius: 4px;
+}
+
+.filter-price::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Strips browser styling */
+  appearance: none;
+
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background: rgb(233, 116, 58); /* Modern Blue */
+  border: 2px solid #ffffff; /* White inner ring effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+  margin-top: -6px; /* (Track height / 2) - (Thumb height / 2) to center it */
+  transition:
+    transform 0.1s ease,
+    background-color 0.1s ease;
+}
+
+/* Hover state (Knob turns darker blue) */
+.filter-price:hover::-webkit-slider-thumb {
+  background: rgb(239, 95, 24);
+}
+
+/* Active state (Knob pops out slightly when clicked/dragged) */
+.filter-price:active::-webkit-slider-thumb {
+  transform: scale(1.2);
+}
+.filter-price:active::-moz-range-thumb {
+  transform: scale(1.2);
+}
+
+/* PRODUCT GRID */
+.product-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.product-card h3 {
+  margin: 10px 0 5px;
+  font-size: 1.1rem;
+}
+
+.product-card p {
+  font-weight: 600;
+  color: #444;
+}
+
+/* CART SIDEBAR */
+.cart {
+  /* position: fixed; */
+  /* right: -350px; */
+  top: 20px;
+  width: 350px;
+  height: 100vh;
+  background: white;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+/* .cart-sidebar.open {
+  right: 0;
+} */
+
+.cart-items {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.cart-footer {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.go-checkout {
+  width: 100%;
+  padding: 12px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 350px;
+  text-align: center;
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.add-to-cart-modal {
+  width: 80px;
+  height: 20px;
+  border-radius: 5px;
+  background-color: rgb(233, 116, 58);
+  color: white;
+  cursor: pointer;
+}
+
+.order-success {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #4caf50;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 6px;
+  font-size: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-20px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.order-success.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+button.increase {
+  width: 30px;
+}
+
+button.decrease {
+  width: 30px;
+}
+
+button.remove {
+  width: 30px;
+}
+
+.modal-fav-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.fav-active {
+  color: red;
+}
