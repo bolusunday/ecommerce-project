@@ -1,7 +1,21 @@
-* {
+/* * {
   font-family: "Inter", sans-serif;
   color: rgb(79, 78, 78);
   background: rgb(228, 223, 223);
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  color: rgb(79, 78, 78);
+  background: rgb(228, 223, 223);
+}
+
+body {
+  background: #f5f7fa;
+  color: #333;
 }
 
 .product-image {
@@ -9,6 +23,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 250px;
   height: 250px;
+  margin-top: 20px;
 }
 
 .go-checkout {
@@ -49,6 +64,7 @@
 
 .cart-page {
   justify-items: center;
+  padding-top: 30px;
 }
 
 .cart-total {
@@ -57,3 +73,107 @@
   font-weight: bold;
   justify-content: center;
 }
+
+/* NAVBAR */
+/* .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background: white;
+  background: rgb(228, 223, 223);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+} */
+
+/* NAVBAR CONTAINER */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background: rgb(228, 223, 223);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* LOGO */
+.logo a {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgb(239, 95, 24);
+  text-decoration: none;
+}
+
+.nav-links a,
+i {
+  margin-right: 8px;
+  color: rgb(239, 95, 24);
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.go-checkout {
+  width: 100%;
+  padding: 12px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button.increase {
+  width: 30px;
+}
+
+button.decrease {
+  width: 30px;
+}
+
+button.remove {
+  width: 30px;
+}
+
+/* RESPONSIVE */
+/* @media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: white;
+    width: 200px;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(239, 95, 24);
+    text-decoration: none;
+  }
+
+  .search {
+    width: 40%;
+    padding: 10px;
+    margin-right: 5px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  }
+} */
