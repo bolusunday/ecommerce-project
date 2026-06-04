@@ -12,14 +12,25 @@
   </head>
 
   <body>
-    <!-- NAVBAR -->
-    <nav class="navbar">
+    <header class="navbar">
       <div class="logo">Bliss Store</div>
-
       <input type="text" class="search" placeholder="Search products..." />
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
 
-      <div class="cart-icon">🛒 <span class="cart-count">0</span></div>
-    </nav>
+        <a href="order-history.html"
+          ><i class="fa-solid fa-clock-rotate-left"></i> Order History</a
+        >
+        <a href="cart.html"
+          ><i class="fa-solid fa-cart-shopping cart-icon"></i>Cart<span
+            class="cart-count"
+            >0</span
+          ></a
+        >
+        <!-- <div class="cart-icon">🛒 <span class="cart-count">0</span></div> -->
+      </nav>
+      <div class="nav-toggle" id="navToggle">☰</div>
+    </header>
 
     <div class="hero">
       <img src="/assets/images/hero.jpg" class="hero-image" />
@@ -95,6 +106,15 @@
         <button class="add-to-cart-modal">Add to Cart</button>
       </div>
     </div>
+    <script>
+      const navToggle = document.getElementById("navToggle");
+      const navLinks = document.getElementById("navLinks");
+
+      navToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script>
+
     <script type="module" src="app.js"></script>
   </body>
 </html>
