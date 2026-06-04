@@ -1,4 +1,4 @@
-const orderList = document.querySelector(".orders-list");
+const ordersList = document.querySelector(".orders-list");
 
 async function loadOrders() {
   try {
@@ -12,7 +12,9 @@ async function loadOrders() {
 
     ordersList.innerHTML = orders
       .map((order) => {
+        console.log(orders);
         const items = JSON.parse(order.items);
+        console.log(items);
 
         return `
       <div class="order-card">
@@ -23,8 +25,12 @@ async function loadOrders() {
 
             <div class="order-items">
               ${items
-                .map((item) => `• Product ID: ${item.id} — Qty: ${item.qty}`)
+                .map(
+                  (item) =>
+                    `• Product name: ${item.name} — Qty: ${item.quantity}`,
+                )
                 .join("<br>")}
+                
             </div>
 
             <div class="order-total">
