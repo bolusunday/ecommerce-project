@@ -147,6 +147,36 @@ export function showOrderSuccess() {
   }, 2000);
 }
 
+// VIEW: Render favourites list
+export function renderFavourites(container, products, favourites) {
+  if (favourites.length === 0) {
+    container.innerHTML = `
+      <div class="empty">
+        <p>No favourites yet</p>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = favourites
+    .map((id) => {
+      const product = products.find((p) => p.id === id);
+      if (!product) return "";
+
+      return `
+        <div class="card">
+          <img src="${product.image}" alt="${product.name}">
+          <h3>${product.name}</h3>
+          <p>$${product.price}</p>
+          <button class="remove-fav-btn" data-id="${product.id}">
+            Remove
+          </button>
+        </div>
+      `;
+    })
+    .join("");
+}
+
 // function renderOrderSummary(cart, products) {
 //   const container = document.querySelector(".order-items");
 //   container.innerHTML = "";
