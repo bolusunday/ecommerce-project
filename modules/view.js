@@ -177,6 +177,13 @@ export function renderFavourites(container, products, favourites) {
     .join("");
 }
 
+//FavIcon
+export function renderFavouriteIcon(isFav) {
+  return isFav
+    ? `<i class="fa-solid fa-heart fav-active"></i>`
+    : `<i class="fa-regular fa-heart"></i>`;
+}
+
 // function renderOrderSummary(cart, products) {
 //   const container = document.querySelector(".order-items");
 //   container.innerHTML = "";
