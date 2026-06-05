@@ -142,7 +142,7 @@ document.querySelector(".cart-icon").addEventListener("click", () => {
   window.location.href = "cart.html";
 });
 
-export function initFavouritesPage() {
+export function favouritesPageController() {
   const container = document.getElementById("favourites-container");
 
   view.renderFavourites(
