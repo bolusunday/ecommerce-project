@@ -177,11 +177,17 @@ export function renderFavourites(container, products, favourites) {
     .join("");
 }
 
-//FavIcon
+//Render favourite heart icon
 export function renderFavouriteIcon(isFav) {
   return isFav
     ? `<i class="fa-solid fa-heart fav-active"></i>`
     : `<i class="fa-regular fa-heart"></i>`;
+}
+
+//Update favourite icon inside modal
+export function updateModalFavouriteIcon(isFav) {
+  const favBtn = document.querySelector(".modal-fav-btn");
+  favBtn.innerHTML = renderFavouriteIcon(isFav);
 }
 
 // function renderOrderSummary(cart, products) {
