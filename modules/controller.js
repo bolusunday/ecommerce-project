@@ -142,6 +142,25 @@ document.querySelector(".cart-icon").addEventListener("click", () => {
   window.location.href = "cart.html";
 });
 
+export function initFavouritesPage() {
+  const container = document.getElementById("favourites-container");
+
+  view.renderFavourites(
+    container,
+    model.state.products,
+    model.state.favourites,
+  );
+
+  container.addEventListener("click", (e) => {
+    if (e.target.closest(".remove-fav-btn")) {
+      const id = Number(e.target.closest(".remove-fav-btn").dataset.id);
+
+      model.toggleFavourite(id);
+      initFavouritesPage(); // re-render
+    }
+  });
+}
+
 //Toggle Fav Controller
 // document.querySelectorAll(".fav-btn").forEach((btn) => {
 //   btn.addEventListener("click", (e) => {
