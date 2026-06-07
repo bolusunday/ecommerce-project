@@ -90,6 +90,7 @@ function handleOpenModal(productId) {
   view.openModal();
 }
 
+//Modal favourite controller
 document.body.addEventListener("click", (e) => {
   const favBtn = e.target.closest(".modal-fav-btn");
   if (!favBtn) return;
@@ -170,15 +171,27 @@ export function favouritesPageController() {
     model.state.products,
     model.state.favourites,
   );
+  container.addEventListener("click", removeFavs);
 
-  container.addEventListener("click", (e) => {
-    if (e.target.closest(".remove-fav-btn")) {
-      const id = Number(e.target.closest(".remove-fav-btn").dataset.id);
+  // // container.addEventListener("click", (e) => {
+  // //   if (e.target.closest(".remove-fav-btn")) {
+  // //     const id = Number(e.target.closest(".remove-fav-btn").dataset.id);
 
-      model.toggleFavourite(id);
-      favouritesPageController(); // re-render
-    }
-  });
+  // //     model.toggleFavourite(id);
+  // //     favouritesPageController(); // re-render
+  // //   }
+  // });
+}
+
+//Remove Favourites
+export function removeFavs(e) {
+  const remBtn = e.target.closest(".remove-fav-btn");
+  if (!remBtn) return;
+
+  const id = remBtn.dataset.id;
+
+  model.toggleFavourite(id);
+  favouritesPageController();
 }
 
 //Toggle Fav Controller
