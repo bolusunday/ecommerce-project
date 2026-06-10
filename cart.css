@@ -43,10 +43,10 @@ body {
 
 .go-checkout:hover {
   transition: 0.2s;
-  font-size: 20px;
+  font-size: 18px;
   color: white;
-  width: 260px;
-  height: 60px;
+  width: 255px;
+  height: 55px;
   margin-top: 20px;
   border-radius: 10px;
   background: rgb(239, 95, 24);
@@ -115,16 +115,6 @@ i {
   color: rgb(239, 95, 24);
   font-size: 1.1rem;
   text-decoration: none;
-}
-
-.go-checkout {
-  width: 100%;
-  padding: 12px;
-  background: black;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
 }
 
 button.increase {
