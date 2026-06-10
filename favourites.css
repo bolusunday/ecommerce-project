@@ -1,6 +1,19 @@
 /* ================================
    FAVOURITES PAGE STYLING
 ================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  color: rgb(79, 78, 78);
+  background: rgb(228, 223, 223);
+}
+
+/* body {
+  background: #f5f7fa;
+  color: #333;
+} */
 
 /* Page Title */
 .fav-title {
@@ -8,7 +21,7 @@
   margin: 25px 0;
   font-size: 28px;
   font-weight: 700;
-  color: #222;
+  /* color: #222; */
 }
 
 /* Grid Layout */
@@ -20,7 +33,7 @@
 }
 
 /* Product Card */
-.fav-card {
+.card {
   background: #fff;
   border-radius: 12px;
   padding: 15px;
@@ -31,7 +44,7 @@
   text-align: center;
 }
 
-.fav-card:hover {
+.card:hover {
   transform: translateY(-4px);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
 }
@@ -46,7 +59,7 @@
 }
 
 /* Product Title */
-.fav-card h3 {
+.card h3 {
   font-size: 18px;
   font-weight: 600;
   margin: 8px 0;
@@ -54,7 +67,7 @@
 }
 
 /* Product Price */
-.fav-card p {
+.card p {
   font-size: 16px;
   font-weight: 500;
   color: #444;
