@@ -3,6 +3,7 @@ import * as model from "./model.js";
 
 export function renderProductGrid(products) {
   const container = document.querySelector(".product-grid");
+  if (!container) return;
 
   const html = products
     .map((p) => {
@@ -76,8 +77,11 @@ function renderEmptyCart(cart, products) {
 }
 
 export function updateCartCount(cart) {
+  const el = document.querySelector(".cart-count");
+  if (!el) return;
+
   const count = cart.reduce((acc, item) => acc + item.quantity, 0);
-  document.querySelector(".cart-count").textContent = count;
+  el.textContent = count;
 }
 
 export function renderModal(product) {
@@ -147,7 +151,7 @@ export function showOrderSuccess() {
   }, 2000);
 }
 
-// VIEW: Render favourites list
+//Render favourites list
 export function renderFavourites(container, products, favourites) {
   if (favourites.length === 0) {
     container.innerHTML = `
@@ -164,10 +168,10 @@ export function renderFavourites(container, products, favourites) {
       if (!product) return "";
 
       return `
-        <div class="card">
+        <div class="fav-card">
           <img src="${product.image}" alt="${product.name}">
-          <h3>${product.name}</h3>
-          <p>$${product.price}</p>
+          <h3 class="product-name">${product.name}</h3>
+          <p class="product-price">$${product.price}</p>
           <button class="remove-fav-btn" data-id="${product.id}">
             Remove
           </button>
@@ -182,6 +186,17 @@ export function renderFavouriteIcon(isFav) {
   return isFav
     ? `<i class="fa-solid fa-heart fav-active"></i>`
     : `<i class="fa-regular fa-heart"></i>`;
+}
+
+export function updateFavCount() {
+  console.log(model.state.favourites);
+  model.loadFavourites();
+  let favsCountText = document.querySelector(".fav-count");
+  if (!favsCountText) return;
+
+  const favouritesCount = model.state.favourites.length;
+
+  favsCountText.textContent = favouritesCount;
 }
 
 //Update favourite icon inside modal
