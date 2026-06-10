@@ -116,6 +116,7 @@ function saveFavourites() {
 
 export function toggleFavourite(productId) {
   const index = state.favourites.indexOf(productId);
+  if (!productId) return;
 
   if (index === -1) {
     state.favourites.push(productId);
