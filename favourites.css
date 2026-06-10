@@ -27,57 +27,57 @@
 /* Grid Layout */
 .fav-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 22px;
   padding: 20px;
 }
 
-/* Product Card */
-.card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 15px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-  text-align: center;
-}
-
-.card:hover {
+/* Favourites Card */
+.fav-card {
+  display: grid;
+  justify-content: center;
   transform: translateY(-4px);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 /* Product Image */
 .fav-card img {
   width: 100%;
-  height: 180px;
+  height: 250px;
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 12px;
 }
 
 /* Product Title */
-.card h3 {
-  font-size: 18px;
+.product-name {
+  justify-self: center;
+  font-size: 17px;
   font-weight: 600;
   margin: 8px 0;
   color: #333;
-  background: none;
+  background: #fff;
+  /* background: none; */
 }
 
 /* Product Price */
-.card p {
+.product-price {
+  justify-self: center;
   font-size: 16px;
   font-weight: 500;
   color: #444;
   margin-bottom: 12px;
-  background: none;
+  /* background: none; */
+  background: #fff;
 }
 
 /* Remove Button */
 .remove-fav-btn {
+  width: 40%;
+  justify-self: center;
   padding: 8px 14px;
   background: #d62828;
   color: #fff;
@@ -101,7 +101,7 @@
   opacity: 0.8;
 }
 
-/* Responsive Tweaks */
+/* Responsive */
 @media (max-width: 480px) {
   .fav-card img {
     height: 150px;
