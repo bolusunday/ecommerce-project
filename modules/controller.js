@@ -11,6 +11,7 @@ function init() {
   updateProductGrid();
   updateCartUI();
   model.loadFavourites();
+  view.updateFavCount();
 }
 init();
 
