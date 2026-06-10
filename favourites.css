@@ -64,6 +64,7 @@
   font-weight: 600;
   margin: 8px 0;
   color: #333;
+  background: none;
 }
 
 /* Product Price */
@@ -72,6 +73,7 @@
   font-weight: 500;
   color: #444;
   margin-bottom: 12px;
+  background: none;
 }
 
 /* Remove Button */
