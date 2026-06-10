@@ -82,7 +82,9 @@ async function handleStripePayment() {
 
   const order = {
     items,
-    total: model.getCartTotal(model.state.cart, model.state.products),
+    total:
+      model.getCartTotal(model.state.cart, model.state.products) +
+      model.state.shipping.fee,
     date: new Date().toISOString(),
   };
 
